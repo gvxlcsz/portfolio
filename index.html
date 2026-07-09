@@ -11,6 +11,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <style>
 
 *{
+    cursor:url("cursor.png") 16 16, auto;
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -141,31 +142,51 @@ header{
 
 }
 
-.nav{
+.logo a{
 
-    display:flex;
-    align-items:center;
-    gap:20px;
-
-}
-
-.nav a{
-
-    color:#cfcfcf;
+    color:white;
 
     text-decoration:none;
 
     font-size:22px;
 
-    transition:.3s ease;
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.logo a:hover{
+
+    opacity:.8;
+
+}
+
+.nav{
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+
+}
+
+.nav a{
+
+    color:#d3d3d3;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
 
 }
 
 .nav a:hover{
 
     color:white;
-
-    transform:translateY(-2px);
 
 }
 
@@ -262,27 +283,21 @@ header{
 
     <header>
 
-        <div class="logo">
-            klws
-        </div>
+    <div class="logo">
+        <a href="index.html">klws</a>
+    </div>
 
-        <div class="nav">
+    <div class="nav">
 
-            <a href="https://github.com/gvxlcsz" target="_blank" title="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
+        <a href="about.html">About</a>
 
-            <a href="https://discord.com/users/864809444239999047" target="_blank" title="Discord">
-                <i class="fa-brands fa-discord"></i>
-            </a>
+        <a href="projects.html">Projects</a>
 
-            <a href="mailto:kailws2005@gmailcom" title="Email">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+        <a href="contact.html">Contact</a>
 
-        </div>
+    </div>
 
-    </header>
+</header>
 
     <main class="hero">
 
