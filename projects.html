@@ -1,1 +1,196 @@
-<a href="projects.html" class="active">Projects</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | klws</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.55)
+        ),
+        url("projects-bg.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+}
+
+/* ---------------- Header ---------------- */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    background:rgba(15,15,15,.75);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    z-index:1000;
+
+}
+
+.logo a{
+
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+.nav{
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+
+}
+
+.nav a{
+
+    color:#bdbdbd;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.nav a:hover,
+.nav a.active{
+
+    color:white;
+
+}
+
+/* ---------------- Projects ---------------- */
+
+.projects-container{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:130px 0 100px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.section-title{
+
+    width:340px;
+    max-width:90%;
+
+    margin-bottom:50px;
+
+}
+
+.coming-soon{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.coming-soon img{
+
+    width:650px;
+    max-width:90%;
+
+    transition:.3s ease;
+
+    user-select:none;
+    pointer-events:none;
+
+}
+
+.coming-soon img:hover{
+
+    transform:scale(1.02);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <a href="index.html">klws</a>
+
+    </div>
+
+    <nav class="nav">
+
+        <a href="about.html">About</a>
+
+        <a href="projects.html" class="active">Projects</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+<main class="projects-container">
+
+    <div class="coming-soon">
+
+        <img src="coming-soon.png" alt="Coming Soon">
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

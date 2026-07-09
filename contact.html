@@ -1,1 +1,518 @@
-<a href="contact.html" class="active">Contact</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>klws</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.55)
+        ),
+        url("contact-bg.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* ================= LOCK SCREEN ================= */
+
+#contact-lock{
+
+    position:fixed;
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+#contact-lock h1{
+
+    color:white;
+    font-size:46px;
+    letter-spacing:4px;
+
+}
+
+#contact-lock p{
+
+    color:#777;
+    margin-top:15px;
+
+}
+
+#accessInput{
+
+    margin-top:35px;
+
+    width:320px;
+
+    background:transparent;
+
+    border:none;
+    border-bottom:2px solid #555;
+
+    color:white;
+
+    font-size:22px;
+
+    text-align:center;
+
+    padding:12px;
+
+    outline:none;
+
+}
+
+#message{
+
+    height:22px;
+
+    margin-top:20px;
+
+    color:#ff5c5c;
+
+}
+
+/* ================= PAGE ================= */
+
+#contact-page{
+
+    display:none;
+
+}
+
+/* ---------------- Header ---------------- */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    background:rgba(15,15,15,.75);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 40px;
+
+    z-index:1000;
+
+}
+
+.logo a{
+
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+.nav{
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+
+}
+
+.nav a{
+
+    color:#bdbdbd;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.nav a:hover,
+.nav a.active{
+
+    color:white;
+
+}
+
+/* ---------------- Contact ---------------- */
+
+.contact-container{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:130px 0 100px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.section-title{
+
+    width:200px;
+    max-width:90%;
+
+    margin-bottom:35px;
+
+}
+
+.contact-subtitle{
+
+    color:#d3d3d3;
+
+    font-size:20px;
+
+    margin-bottom:60px;
+
+}
+
+/* ================= Skull Screen ================= */
+
+#skull-screen{
+
+    position:fixed;
+    inset:0;
+
+    background:black;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9998;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+}
+
+#skull-screen.show{
+
+    display:flex;
+
+    opacity:1;
+
+}
+
+#skull-screen.hide{
+
+    opacity:0;
+
+}
+
+#skull-screen img{
+
+    width:500px;
+    max-width:90%;
+
+    user-select:none;
+    pointer-events:none;
+
+}
+
+/* ================= Contact Cards ================= */
+
+.contact-grid{
+
+    width:100%;
+    max-width:1100px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.contact-card{
+
+    background:rgba(15,15,15,.45);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,.08),
+        0 20px 45px rgba(0,0,0,.45);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.15),
+        0 20px 50px rgba(0,0,0,.55);
+
+}
+
+.contact-icon{
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+}
+
+.contact-card h2{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.contact-card p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+
+<div id="contact-lock">
+
+    <h1>CONTACT REQUIRED</h1>
+
+    <p>Enter contact to get access.</p>
+
+    <input
+        type="text"
+        id="accessInput"
+        placeholder=">">
+
+    <p id="message"></p>
+
+</div>
+
+    <div id="skull-screen">
+
+    <img src="skull.png" alt="Skull">
+
+</div>
+
+<div id="contact-page">
+
+<header>
+
+    <div class="logo">
+
+        <a href="index.html">klws</a>
+
+    </div>
+
+    <nav class="nav">
+
+        <a href="about.html">About</a>
+
+        <a href="projects.html">Projects</a>
+
+        <a href="contact.html" class="active">Contact</a>
+
+    </nav>
+
+</header>
+
+<main class="contact-container">
+
+    <img src="contact-title.png" class="section-title" alt="Contact">
+
+    <p class="contact-subtitle">
+
+        Let's build something together.
+
+    </p>
+
+    <div class="contact-grid">
+
+    <a href="mailto:kailws2005@gmail.com" class="contact-card">
+
+        <img src="email.png" class="contact-icon" alt="Email">
+
+        <h2>Email</h2>
+
+        <p>kailws2005@gmail.com</p>
+
+    </a>
+
+    <a href="https://discord.com/users/864809444239999047"
+       target="_blank"
+       class="contact-card">
+
+        <img src="discord.png" class="contact-icon" alt="Discord">
+
+        <h2>Discord</h2>
+
+        <p>@gvx_lcsz.</p>
+
+    </a>
+
+    <a href="https://github.com/gvxlcsz"
+       target="_blank"
+       class="contact-card">
+
+        <img src="github.png" class="contact-icon" alt="GitHub">
+
+        <h2>GitHub</h2>
+
+        <p>github.com/gvx_lcsz.</p>
+
+    </a>
+
+</div>
+
+</main>
+
+</div>
+
+<script>
+
+const input = document.getElementById("accessInput");
+const message = document.getElementById("message");
+
+input.focus();
+
+input.addEventListener("keydown",function(e){
+
+    if(e.key !== "Enter") return;
+
+    if(input.value.trim().toLowerCase() === "contact"){
+
+        message.style.color="#7CFF9B";
+        message.textContent="Access Granted.";
+
+        setTimeout(()=>{
+
+            const lock = document.getElementById("contact-lock");
+            const skull = document.getElementById("skull-screen");
+            const page = document.getElementById("contact-page");
+
+            lock.style.display="none";
+
+            skull.style.display="flex";
+
+            requestAnimationFrame(()=>{
+                skull.classList.add("show");
+            });
+
+            setTimeout(()=>{
+
+                skull.classList.remove("show");
+                skull.classList.add("hide");
+
+                setTimeout(()=>{
+
+                    skull.style.display="none";
+
+                    page.style.display="block";
+
+                },600);
+
+            },5000);
+
+        },800);
+
+    }
+
+    else{
+
+        message.style.color="#ff5c5c";
+        message.textContent="Invalid Contact.";
+
+        input.value="";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

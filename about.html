@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About | klws</title>
+<title>klws</title>
 
 <style>
 
@@ -133,7 +133,7 @@ header{
     flex-direction:column;
     align-items:center;
 
-    padding:80px 0 80px;
+    padding:80px 80px;
 
 }
 
@@ -189,7 +189,6 @@ header{
 .about-card:hover{
 
     transform:translateY(-4px);
-
     box-shadow:
         0 0 28px rgba(255,255,255,.15),
         0 25px 55px rgba(0,0,0,.55);
@@ -258,6 +257,237 @@ header{
 
 }
 
+/* ================= Skills ================= */
+
+.skills-section{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:140px auto;
+
+    text-align:center;
+
+}
+
+.section-title{
+
+    width:300px;
+
+}
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:35px;
+
+}
+
+/* Flip Card */
+
+.flip-card{
+
+    background:transparent;
+
+    height:260px;
+
+    perspective:1000px;
+
+}
+
+.flip-card-inner{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    transition:transform .8s;
+
+    transform-style:preserve-3d;
+
+}
+
+.flip-card:hover .flip-card-inner{
+
+    transform:rotateY(180deg);
+
+}
+
+.flip-card-front,
+.flip-card-back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:24px;
+
+    background:rgba(15,15,15,.45);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,.08),
+        0 20px 45px rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    backface-visibility:hidden;
+
+}
+
+.flip-card-front h3{
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+.flip-card-back{
+
+    transform:rotateY(180deg);
+
+}
+
+.flip-card-back p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+/* ================= Interests ================= */
+
+.interests-section{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:140px auto;
+
+    text-align:center;
+
+}
+
+.interests-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+.interest-card{
+
+    background:rgba(15,15,15,.45);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    transition:.3s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.interest-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 25px rgba(255,255,255,.12);
+
+}
+
+.interest-card img{
+
+    width:70px;
+
+    margin-bottom:20px;
+
+}
+
+.interest-card h3{
+
+    color:white;
+
+    margin-bottom:12px;
+
+    font-size:22px;
+
+}
+
+.interest-card p{
+
+    color:#cfcfcf;
+
+    line-height:1.7;
+
+}
+
+/* ================= Footer ================= */
+
+footer{
+
+    width:100%;
+
+    padding:35px 20px;
+
+    margin-top:100px;
+
+    background:rgba(15,15,15,.55);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+footer p{
+
+    color:#a8a8a8;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
+
+    line-height:1.8;
+
+}
+
+footer p:first-child{
+
+    color:white;
+
+    margin-bottom:5px;
+
+}
+
 </style>
 
 </head>
@@ -312,10 +542,122 @@ header{
 
             </div>
 
+            </div>
+
+            <section class="skills-section">
+
+    <img src="skills-title.png" class="section-title" alt="Skills">
+
+    <div class="skills-grid">
+
+        <!-- HTML -->
+        <div class="flip-card">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <h3>HTML5</h3>
+                </div>
+
+                <div class="flip-card-back">
+                    <p>
+                        Advanced<br>
+                        Semantic HTML<br>
+                        Responsive Layouts
+                    </p>
+                </div>
+
+            </div>
+
         </div>
+
+        <!-- CSS -->
+        <div class="flip-card">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <h3>CSS3</h3>
+                </div>
+
+                <div class="flip-card-back">
+                    <p>
+                        Flexbox<br>
+                        Grid<br>
+                        Animations
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- JavaScript -->
+        <div class="flip-card">
+
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="flip-card-back">
+                    <p>
+                        DOM<br>
+                        Interactive UI<br>
+                        ES6
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="interests-section">
+
+    <img src="interest.png" class="section-title" alt="Interests">
+
+    <div class="interests-grid">
+
+        <div class="interest-card">
+            <img src="web.png" alt="">
+            <h3>Web Development</h3>
+            <p>Building modern and responsive websites.</p>
+        </div>
+
+        <div class="interest-card">
+            <img src="ui.png" alt="">
+            <h3>UI Design</h3>
+            <p>Designing clean and minimal interfaces.</p>
+        </div>
+
+        <div class="interest-card">
+            <img src="minecraft.png" alt="">
+            <h3>Minecraft</h3>
+            <p>Creating servers and managing communities.</p>
+        </div>
+
+        <div class="interest-card">
+            <img src="design.png" alt="">
+            <h3>Graphic Design</h3>
+            <p>Logos, branding and visual content.</p>
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
+    <footer>
+
+        <p>© 2026 klws. All rights reserved.</p>
+
+        <p>Built with HTML5, CSS3 & JavaScript.</p>
+
+    </footer>
 </body>
 
 </html>
