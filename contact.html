@@ -36,73 +36,6 @@ body{
     background-repeat:no-repeat;
     background-attachment:fixed;
 }
-
-/* ================= LOCK SCREEN ================= */
-
-#contact-lock{
-
-    position:fixed;
-    inset:0;
-
-    background:#000;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
-
-}
-
-#contact-lock h1{
-
-    color:white;
-    font-size:46px;
-    letter-spacing:4px;
-
-}
-
-#contact-lock p{
-
-    color:#777;
-    margin-top:15px;
-
-}
-
-#accessInput{
-
-    margin-top:35px;
-
-    width:320px;
-
-    background:transparent;
-
-    border:none;
-    border-bottom:2px solid #555;
-
-    color:white;
-
-    font-size:22px;
-
-    text-align:center;
-
-    padding:12px;
-
-    outline:none;
-
-}
-
-#message{
-
-    height:22px;
-
-    margin-top:20px;
-
-    color:#ff5c5c;
-
-}
-
 /* ================= PAGE ================= */
 
 #contact-page{
@@ -208,52 +141,6 @@ header{
 
 }
 
-/* ================= Skull Screen ================= */
-
-#skull-screen{
-
-    position:fixed;
-    inset:0;
-
-    background:black;
-
-    display:none;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:9998;
-
-    opacity:0;
-
-    transition:opacity .6s ease;
-
-}
-
-#skull-screen.show{
-
-    display:flex;
-
-    opacity:1;
-
-}
-
-#skull-screen.hide{
-
-    opacity:0;
-
-}
-
-#skull-screen img{
-
-    width:500px;
-    max-width:90%;
-
-    user-select:none;
-    pointer-events:none;
-
-}
-
 /* ================= Contact Cards ================= */
 
 .contact-grid{
@@ -354,31 +241,6 @@ header{
 
 <body>
 
-<!-- LOCK SCREEN -->
-
-<div id="contact-lock">
-
-    <h1>CONTACT REQUIRED</h1>
-
-    <p>Enter contact to get access.</p>
-
-    <input
-        type="text"
-        id="accessInput"
-        placeholder=">">
-
-    <p id="message"></p>
-
-</div>
-
-    <div id="skull-screen">
-
-    <img src="skull.png" alt="Skull">
-
-</div>
-
-<div id="contact-page">
-
 <header>
 
     <div class="logo">
@@ -448,71 +310,5 @@ header{
 </div>
 
 </main>
-
-</div>
-
-<script>
-
-const input = document.getElementById("accessInput");
-const message = document.getElementById("message");
-
-input.focus();
-
-input.addEventListener("keydown",function(e){
-
-    if(e.key !== "Enter") return;
-
-    if(input.value.trim().toLowerCase() === "contact"){
-
-        message.style.color="#7CFF9B";
-        message.textContent="Access Granted.";
-
-        setTimeout(()=>{
-
-            const lock = document.getElementById("contact-lock");
-            const skull = document.getElementById("skull-screen");
-            const page = document.getElementById("contact-page");
-
-            lock.style.display="none";
-
-            skull.style.display="flex";
-
-            requestAnimationFrame(()=>{
-                skull.classList.add("show");
-            });
-
-            setTimeout(()=>{
-
-                skull.classList.remove("show");
-                skull.classList.add("hide");
-
-                setTimeout(()=>{
-
-                    skull.style.display="none";
-
-                    page.style.display="block";
-
-                },600);
-
-            },5000);
-
-        },800);
-
-    }
-
-    else{
-
-        message.style.color="#ff5c5c";
-        message.textContent="Invalid Contact.";
-
-        input.value="";
-
-    }
-
-});
-
-</script>
-
 </body>
-
 </html>

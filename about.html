@@ -378,54 +378,42 @@ header{
 
     width:92%;
     max-width:1400px;
-
     margin:140px auto;
-
     text-align:center;
 
 }
 
 .interests-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-    margin-top:35px;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 30px;
 }
 
 .interest-card{
-
     background:rgba(15,15,15,.45);
-
     backdrop-filter:blur(16px);
-
+    -webkit-backdrop-filter:blur(16px);
     border-radius:24px;
-
     padding:35px;
-
-    transition:.3s;
-
+    width:390px;
+    flex:0 0 390px;
     border:1px solid rgba(255,255,255,.08);
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 
 }
 
 .interest-card:hover{
-
     transform:translateY(-8px);
-
-    box-shadow:0 0 25px rgba(255,255,255,.12);
-
-}
-
-.interest-card img{
-
-    width:70px;
-
-    margin-bottom:20px;
+    border-color:rgba(255,255,255,.22);
+    box-shadow:
+        0 0 18px rgba(255,255,255,.12),
+        0 0 40px rgba(255,255,255,.08),
+        0 0 70px rgba(255,255,255,.04);
 
 }
 
@@ -622,25 +610,21 @@ footer p:first-child{
     <div class="interests-grid">
 
         <div class="interest-card">
-            <img src="web.png" alt="">
             <h3>Web Development</h3>
             <p>Building modern and responsive websites.</p>
         </div>
 
         <div class="interest-card">
-            <img src="ui.png" alt="">
             <h3>UI Design</h3>
             <p>Designing clean and minimal interfaces.</p>
         </div>
 
         <div class="interest-card">
-            <img src="minecraft.png" alt="">
             <h3>Minecraft</h3>
             <p>Creating servers and managing communities.</p>
         </div>
 
         <div class="interest-card">
-            <img src="design.png" alt="">
             <h3>Graphic Design</h3>
             <p>Logos, branding and visual content.</p>
         </div>
